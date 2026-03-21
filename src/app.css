@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--bg-base: #1d1d1d;
+	--bg-panel: #2b2b2b;
+	--bg-header: #323232;
+	--bg-input: #3a3a3a;
+	--bg-hover: #404040;
+	--accent: #383AB8;
+	--accent-light: #6366d6;
+	--accent-orange: #e87d0d;
+	--text: #e0e0e0;
+	--text-dim: #b0b0b0;
+	--text-muted: #8a8a8a;
+	--border: #3a3a3a;
+	--border-light: #484848;
+	--radius: 4px;
+	--font-mono: 'Space Mono', monospace;
+	--font-sans: 'IBM Plex Sans', sans-serif;
+	--font-serif: 'IBM Plex Serif', serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	background: var(--bg-base);
+	color: var(--text);
+	font-family: var(--font-sans);
+	font-size: 15px;
+	overflow-x: hidden;
+}
+
+/* Dot grid background */
+body {
+	background-image: radial-gradient(circle, #363636 1px, transparent 1px);
+	background-size: 32px 32px;
+}
+
+::selection {
+	background: var(--accent);
+	color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border-light);
+	border-radius: 3px;
+}
+
+a {
+	color: var(--accent-light);
+	text-decoration: none;
+	transition: color 0.15s;
+}
+
+a:hover {
+	color: var(--accent-orange);
+}
+
+/* Blinking cursor */
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+	content: '_';
+	animation: blink 1s step-end infinite;
+}
+
+/* Utility panel style */
+.panel {
+	background: var(--bg-panel);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+}
