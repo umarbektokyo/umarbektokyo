@@ -11,7 +11,7 @@
 		{ label: 'GitHub', url: 'https://github.com/umarbektokyo' },
 		{ label: 'Email', url: 'mailto:hello@umarbek.dev' },
 		{ label: 'Twitter', url: 'https://twitter.com/umarbektokyo' },
-		{ label: 'LinkedIn', url: 'www.linkedin.com/in/umarbektokyo' }
+		{ label: 'LinkedIn', url: 'https://linkedin.com/in/umarbektokyo' }
 	];
 
 	function renderMd(md: string): string {

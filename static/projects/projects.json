@@ -3,5 +3,15 @@
 		"name": "umarbek.dev",
 		"description": "personal website of mine)",
 		"url": "https://github.com/umarbektokyo/umarbektokyo"
+	},
+	{
+		"name": "matetra",
+		"description": "a multiplayer math card game for the terminal",
+		"url": "https://matetra.umarbek.dev"
+	},
+	{
+		"name": "vault",
+		"description": "File sharing service!",
+		"url": "https://github.com/umarbektokyo/vault"
 	}
 ]

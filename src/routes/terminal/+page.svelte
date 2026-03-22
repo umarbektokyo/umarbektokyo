@@ -31,17 +31,14 @@
 		'visitor@umarbek.dev',
 		'-------------------',
 		'OS: UmarbekOS 1.0.0 aarch64',
-		'Host: Raspberry Pi 5 (8GB)',
+		'Host: Umbrella-Tokyo',
 		'Kernel: DietPi GNU/Linux',
 		'Uptime: since 2026',
-		'Shell: /bin/bash',
+		'Shell: /bin/zsh',
 		'Terminal: umarbek.dev/terminal',
-		'CPU: ARM Cortex-A76 @ 2.4GHz',
-		'Memory: served with love',
-		'',
-		'Location: Tokyo',
-		'Stack: SvelteKit, Go, Docker',
-		'DNS: Cloudflare Tunnel',
+		'CPU: Intel 4004 @ 740kHz',
+		'GPU: In this economy?',
+		'Memory: Infinite',
 		'',
 		'Type "help" for commands.'
 	];
@@ -148,13 +145,11 @@
 		sudo: (args) => {
 			if (args.join(' ').startsWith('rm -rf /')) {
 				return [
-					'[sudo] password for visitor: ***',
-					'',
 					'Nice try.',
-					'Your punishment: reading the entire POSIX specification.'
+					'Your punishment: Install CUDA on arch linux with no LLM or YouTube, pure documentation and agony ❤️‍🔥'
 				];
 			}
-			return ['visitor is not in the sudoers file. This incident will be reported.'];
+			return ['You really though you could do that 🙏'];
 		}
 	};
 
