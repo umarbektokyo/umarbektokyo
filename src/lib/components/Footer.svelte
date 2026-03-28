@@ -1,5 +1,9 @@
+<script lang="ts">
+	import config from '$lib/config';
+</script>
+
 <footer class="footer-bar">
-	<span>umarbek.dev</span>
+	<span>{config.title}</span>
 </footer>
 
 <style>

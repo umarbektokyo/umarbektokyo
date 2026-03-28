@@ -1,5 +1,5 @@
 import { getAllPosts } from '$lib/server/posts';
-import siteConfig from '../../../static/site.json';
+import siteConfig from '$lib/config';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {

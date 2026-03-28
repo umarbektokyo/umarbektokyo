@@ -1,12 +1,13 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import config from '$lib/config';
 	let { data } = $props();
 </script>
 
 <SEO
-	title="Writing - umarbek.dev"
-	description="Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
+	title={config.pages['/writing'].title}
+	description={config.pages['/writing'].description}
 	url="/writing"
 />
 

@@ -1,8 +1,10 @@
 <script lang="ts">
-	const SITE_URL = 'https://umarbek.dev';
-	const SITE_NAME = 'umarbek.dev';
-	const AUTHOR = 'Umarbek Bakhodirjonov';
-	const TWITTER = '@umarbektokyo';
+	import config from '$lib/config';
+
+	const SITE_URL = config.siteUrl;
+	const SITE_NAME = config.title;
+	const AUTHOR = config.name;
+	const TWITTER = config.twitter;
 
 	interface Props {
 		title?: string;
@@ -17,7 +19,7 @@
 	let {
 		title = SITE_NAME,
 		description = '',
-		image = '/banner.webp',
+		image = config.image,
 		url = '',
 		type = 'website',
 		publishedDate = '',
@@ -29,30 +31,27 @@
 	const ogType = type === 'article' ? 'article' : 'website';
 	const robots = noindex ? 'noindex, nofollow' : 'index, follow';
 
+	const socials = config.author.socials;
 	const personJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'Person',
-		name: 'Umarbek Bakhodirjonov',
-		alternateName: 'umarbektokyo',
+		name: config.name,
+		alternateName: config.alternateName,
 		url: SITE_URL,
-		image: `${SITE_URL}/banner.webp`,
-		jobTitle: 'Student',
+		image: `${SITE_URL}${config.image}`,
+		jobTitle: config.author.jobTitle,
 		affiliation: {
 			'@type': 'Organization',
-			name: 'Shinagawa International School'
+			name: config.author.organization
 		},
-		sameAs: [
-			'https://github.com/umarbektokyo',
-			'https://twitter.com/umarbektokyo',
-			'https://linkedin.com/in/umarbektokyo'
-		]
+		sameAs: Object.values(socials)
 	});
 
 	const websiteJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'WebSite',
-		name: 'umarbek.dev',
-		alternateName: 'umarbektokyo',
+		name: config.title,
+		alternateName: config.alternateName,
 		url: SITE_URL
 	});
 </script>

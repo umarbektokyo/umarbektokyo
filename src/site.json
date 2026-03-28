@@ -8,6 +8,7 @@
 	"language": "en",
 	"image": "/banner.webp",
 	"favicon": "/favicon.png",
+	"twitter": "@umarbektokyo",
 
 	"author": {
 		"jobTitle": "Student",
@@ -23,16 +24,24 @@
 
 	"pages": {
 		"/": {
-			"title": "umarbek.dev | umarbektokyo",
-			"description": "I'm a student, developer, and cool-things enthusiast based in Tokyo, nice to meet you!"
+			"title": "umarbek.dev",
+			"description": "Personal website of Umarbek Bakhodirjonov (umarbektokyo) - student, developer, and cool-things enthusiast based in Tokyo."
 		},
 		"/writing": {
 			"title": "Writing - umarbek.dev",
-			"description": "My blog posts and articles on development, design, and things I find interesting."
+			"description": "Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
 		},
 		"/projects": {
 			"title": "Projects - umarbek.dev",
-			"description": "My projects, from card games to file sharing tools and more."
+			"description": "Projects built by Umarbek Bakhodirjonov - from card games to file sharing tools and more."
+		},
+		"/reading": {
+			"title": "Reading Log - umarbek.dev",
+			"description": "Books Umarbek Bakhodirjonov is reading, has read, or wants to read."
+		},
+		"/wall-of-shame": {
+			"title": "Wall of Shame - umarbek.dev",
+			"description": ""
 		}
 	}
 }

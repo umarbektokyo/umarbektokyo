@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import config from '$lib/config';
 	let { data } = $props();
 
 	const statusLabel: Record<string, string> = {
@@ -11,8 +12,8 @@
 </script>
 
 <SEO
-	title="Reading Log - umarbek.dev"
-	description="Books Umarbek Bakhodirjonov is reading, has read, or wants to read."
+	title={config.pages['/reading'].title}
+	description={config.pages['/reading'].description}
 	url="/reading"
 />
 

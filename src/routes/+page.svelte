@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import config from '$lib/config';
 	let { data } = $props();
 
 	const nav = [
@@ -9,10 +10,10 @@
 	];
 
 	const socials = [
-		{ label: 'GitHub', url: 'https://github.com/umarbektokyo' },
-		{ label: 'Email', url: 'mailto:hello@umarbek.dev' },
-		{ label: 'Twitter', url: 'https://twitter.com/umarbektokyo' },
-		{ label: 'LinkedIn', url: 'https://linkedin.com/in/umarbektokyo' }
+		{ label: 'GitHub', url: config.author.socials.github },
+		{ label: 'Email', url: `mailto:${config.author.email}` },
+		{ label: 'Twitter', url: config.author.socials.twitter },
+		{ label: 'LinkedIn', url: config.author.socials.linkedin }
 	];
 
 	function renderMd(md: string): string {
@@ -41,8 +42,8 @@
 </script>
 
 <SEO
-	title="umarbek.dev"
-	description="Personal website of Umarbek Bakhodirjonov (umarbektokyo) - student, developer, and cool-things enthusiast based in Tokyo."
+	title={config.pages['/'].title}
+	description={config.pages['/'].description}
 	url="/"
 />
 
@@ -52,8 +53,8 @@
 		<div class="header-left">
 			<img src="/crest.webp" alt="Umarbek" class="avatar" width="52" height="52" />
 			<div>
-				<h1 class="name">Umarbek Bakhodirjonov</h1>
-				<p class="tagline">Student at Shinagawa International School</p>
+				<h1 class="name">{config.name}</h1>
+				<p class="tagline">{config.author.jobTitle} at {config.author.organization}</p>
 			</div>
 		</div>
 		<nav class="nav-links">

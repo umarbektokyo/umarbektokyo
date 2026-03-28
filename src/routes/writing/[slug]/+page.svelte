@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import config from '$lib/config';
 	let { data } = $props();
 
 	function renderBody(raw: string): string {
@@ -46,7 +47,7 @@
 </script>
 
 <SEO
-	title="{data.meta.title} - umarbek.dev"
+	title="{data.meta.title} - {config.title}"
 	description={data.meta.description}
 	url="/writing/{data.meta.slug}"
 	type="article"
