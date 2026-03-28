@@ -3,8 +3,8 @@
 	"shortName": "Umarbek",
 	"alternateName": "umarbektokyo",
 	"siteUrl": "https://umarbek.dev",
-	"title": "umarbek.dev",
-	"description": "I'm a student, developer, and cool-things enthusiast based in Tokyo, nice to meet you!",
+	"title": "umarbek",
+	"description": "Hey, I'm Umarbek, cool-things enthusiast, creating whatever my heart desires in the world of digital.",
 	"language": "en",
 	"image": "/banner.webp",
 	"favicon": "/favicon.png",
@@ -24,19 +24,19 @@
 
 	"pages": {
 		"/": {
-			"title": "umarbek.dev",
-			"description": "Personal website of Umarbek Bakhodirjonov (umarbektokyo) - student, developer, and cool-things enthusiast based in Tokyo."
+			"title": "umarbek",
+			"description": "Hey, I'm Umarbek, cool-things enthusiast, creating whatever my heart desires in the world of digital."
 		},
 		"/writing": {
-			"title": "Writing - umarbek.dev",
-			"description": "Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
+			"title": "writing",
+			"description": "Articles by me on topics I find interesting."
 		},
 		"/projects": {
-			"title": "Projects - umarbek.dev",
-			"description": "Projects built by Umarbek Bakhodirjonov - from card games to file sharing tools and more."
+			"title": "projects",
+			"description": "List of projects I've created, have fun checking them out!"
 		},
 		"/wall-of-shame": {
-			"title": "Wall of Shame - umarbek.dev",
+			"title": "wall of shame",
 			"description": ""
 		}
 	}
