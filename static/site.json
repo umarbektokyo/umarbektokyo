@@ -1,12 +1,13 @@
 {
 	"name": "Umarbek Bakhodirjonov",
 	"shortName": "Umarbek",
+	"alternateName": "umarbektokyo",
 	"siteUrl": "https://umarbek.dev",
 	"title": "umarbek.dev",
-	"description": "Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo.",
+	"description": "I'm a student, developer, and cool-things enthusiast based in Tokyo, nice to meet you!",
 	"language": "en",
 	"image": "/banner.webp",
-	"favicon": "/crest.webp",
+	"favicon": "/favicon.png",
 
 	"author": {
 		"jobTitle": "Student",
@@ -22,20 +23,16 @@
 
 	"pages": {
 		"/": {
-			"title": "umarbek.dev",
-			"description": "Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo."
+			"title": "umarbek.dev | umarbektokyo",
+			"description": "I'm a student, developer, and cool-things enthusiast based in Tokyo, nice to meet you!"
 		},
 		"/writing": {
 			"title": "Writing - umarbek.dev",
-			"description": "Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
+			"description": "My blog posts and articles on development, design, and things I find interesting."
 		},
 		"/projects": {
 			"title": "Projects - umarbek.dev",
-			"description": "Projects built by Umarbek Bakhodirjonov - from card games to file sharing tools and more."
-		},
-		"/reading": {
-			"title": "Reading Log - umarbek.dev",
-			"description": "Books Umarbek Bakhodirjonov is reading, has read, or wants to read."
+			"description": "My projects, from card games to file sharing tools and more."
 		}
 	}
 }

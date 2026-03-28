@@ -42,7 +42,7 @@
 
 <SEO
 	title="umarbek.dev"
-	description="Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo."
+	description="Personal website of Umarbek Bakhodirjonov (umarbektokyo) - student, developer, and cool-things enthusiast based in Tokyo."
 	url="/"
 />
 

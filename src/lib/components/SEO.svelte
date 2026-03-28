@@ -28,6 +28,33 @@
 	const fullImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 	const ogType = type === 'article' ? 'article' : 'website';
 	const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+
+	const personJsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: 'Umarbek Bakhodirjonov',
+		alternateName: 'umarbektokyo',
+		url: SITE_URL,
+		image: `${SITE_URL}/banner.webp`,
+		jobTitle: 'Student',
+		affiliation: {
+			'@type': 'Organization',
+			name: 'Shinagawa International School'
+		},
+		sameAs: [
+			'https://github.com/umarbektokyo',
+			'https://twitter.com/umarbektokyo',
+			'https://linkedin.com/in/umarbektokyo'
+		]
+	});
+
+	const websiteJsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'umarbek.dev',
+		alternateName: 'umarbektokyo',
+		url: SITE_URL
+	});
 </script>
 
 <svelte:head>
@@ -51,4 +78,7 @@
 	<meta name="twitter:image" content={fullImage} />
 	<meta name="twitter:creator" content={TWITTER} />
 	<meta name="twitter:site" content={TWITTER} />
+
+	{@html `<script type="application/ld+json">${personJsonLd}</script>`}
+	{@html `<script type="application/ld+json">${websiteJsonLd}</script>`}
 </svelte:head>
