@@ -9,6 +9,7 @@ export interface PostMeta {
 	date: string;
 	slug: string;
 	filename: string;
+	image: string;
 }
 
 function getSlug(filename: string): string {
@@ -49,7 +50,8 @@ export async function getAllPosts(): Promise<PostMeta[]> {
 			description: meta.description || '',
 			date: meta.date || '',
 			slug: getSlug(file),
-			filename: file
+			filename: file,
+			image: meta.image || ''
 		});
 	}
 

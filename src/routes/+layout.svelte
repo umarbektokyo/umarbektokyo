@@ -2,7 +2,6 @@
 	import '../app.css';
 	import StarTrails from '$lib/components/StarTrails.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import Favicon from '$lib/components/Favicon.svelte';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import { initKonami } from '$lib/actions/konami';
@@ -17,7 +16,6 @@
 	let isTerminal = $derived(page.url.pathname === '/terminal');
 </script>
 
-<Favicon />
 <StarTrails />
 <div class="page-wrap">
 	<main>

@@ -1,11 +1,14 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	let { data } = $props();
 </script>
 
-<svelte:head>
-	<title>Writing - umarbek.dev</title>
-</svelte:head>
+<SEO
+	title="Writing - umarbek.dev"
+	description="Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
+	url="/writing"
+/>
 
 <div class="page">
 	<PageNav />

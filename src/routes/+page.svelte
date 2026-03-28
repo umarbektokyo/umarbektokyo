@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
 	let { data } = $props();
 
 	const nav = [
@@ -18,7 +19,7 @@
 		return md
 			.replace(/!\[((?:[^\[\]]*|\[[^\]]*\])*)\]\(([^)]+)\)/g, (_m, alt, src) => {
 				const caption = alt.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-				return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" /><figcaption>${caption}</figcaption></figure>`;
+				return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" loading="lazy" /><figcaption>${caption}</figcaption></figure>`;
 			})
 			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
 			.replace(/\*(.+?)\*/g, '<em>$1</em>')
@@ -39,15 +40,17 @@
 	}
 </script>
 
-<svelte:head>
-	<title>umarbek.dev</title>
-</svelte:head>
+<SEO
+	title="umarbek.dev"
+	description="Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo."
+	url="/"
+/>
 
 <div class="home">
 	<!-- Header with crest + nav -->
 	<div class="header panel">
 		<div class="header-left">
-			<img src="/crest.png" alt="Umarbek" class="avatar" />
+			<img src="/crest.webp" alt="Umarbek" class="avatar" width="52" height="52" />
 			<div>
 				<h1 class="name">Umarbek Bakhodirjonov</h1>
 				<p class="tagline">Student at Shinagawa International School</p>

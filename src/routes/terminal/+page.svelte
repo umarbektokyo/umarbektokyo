@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
 	import { onMount, tick } from 'svelte';
 
 	interface Line {
@@ -182,9 +183,7 @@
 	onMount(() => inputEl?.focus());
 </script>
 
-<svelte:head>
-	<title>terminal.umarbek.dev</title>
-</svelte:head>
+<SEO title="terminal.umarbek.dev" noindex={true} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 <div class="fullscreen-term" onclick={() => inputEl?.focus()}>

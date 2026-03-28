@@ -1,17 +1,44 @@
 [
 	{
 		"name": "umarbek.dev",
-		"description": "personal website of mine)",
-		"url": "https://github.com/umarbektokyo/umarbektokyo"
+		"description": "Personal website of mine! (this website)",
+		"github": "https://github.com/umarbektokyo/umarbektokyo",
+		"url": "https://umarbek.dev"
 	},
 	{
 		"name": "matetra",
-		"description": "a multiplayer math card game for the terminal",
+		"description": "A multiplayer math card game redesigned for the terminal!",
+		"github": "https://github.com/umarbektokyo/matetra-engine",
 		"url": "https://matetra.umarbek.dev"
 	},
 	{
+		"name": "share it",
+		"description": "P2P file sharing service with no limits and max transfer speed; no auth required, just share a 6-letter pin to your friend and start sending files!",
+		"github": "https://github.com/umarbektokyo/shareit",
+		"url": "https://shareit.umarbek.dev"
+	},
+	{
+		"name": "qr-code generator",
+		"description": "QR-Code generator that you deserve!",
+		"github": "https://github.com/umarbektokyo/qr",
+		"url": "https://qr.umarbek.dev"
+	},
+	{
 		"name": "vault",
-		"description": "File sharing service!",
-		"url": "https://github.com/umarbektokyo/vault"
+		"description": "Personal file sharing service!",
+		"github": "https://github.com/umarbektokyo/vault",
+		"url": "https://vault.umarbek.dev"
+	},
+	{
+		"name": "certificate generator",
+		"description": "Online tool for automatically generating certificates/diplomas in batches: just upload the template, position text fields and turn ",
+		"github": "https://github.com/umarbektokyo/qr",
+		"url": "https://qr.umarbek.dev"
+	},
+	{
+		"name": "compare",
+		"description": "Online leaderboard platform to decide on things with friends; uses chess elo system!",
+		"github": "https://github.com/umarbektokyo/compare",
+		"url": "https://compare.umarbek.dev"
 	}
 ]

@@ -9,7 +9,7 @@
 
 <nav class="page-nav">
 	<a href="/" class="nav-crest">
-		<img src="/crest.png" alt="home" class="crest" />
+		<img src="/crest.webp" alt="home" class="crest" width="28" height="28" />
 	</a>
 	{#each links as link}
 		<a href={link.href} class="nav-link">{link.label}</a>

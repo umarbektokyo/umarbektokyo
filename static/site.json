@@ -1,0 +1,41 @@
+{
+	"name": "Umarbek Bakhodirjonov",
+	"shortName": "Umarbek",
+	"siteUrl": "https://umarbek.dev",
+	"title": "umarbek.dev",
+	"description": "Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo.",
+	"language": "en",
+	"image": "/banner.webp",
+	"favicon": "/crest.webp",
+
+	"author": {
+		"jobTitle": "Student",
+		"organization": "Shinagawa International School",
+		"location": "Tokyo, Japan",
+		"email": "hello@umarbek.dev",
+		"socials": {
+			"github": "https://github.com/umarbektokyo",
+			"twitter": "https://twitter.com/umarbektokyo",
+			"linkedin": "https://linkedin.com/in/umarbektokyo"
+		}
+	},
+
+	"pages": {
+		"/": {
+			"title": "umarbek.dev",
+			"description": "Personal website of Umarbek Bakhodirjonov - student, developer, and cool-things enthusiast based in Tokyo."
+		},
+		"/writing": {
+			"title": "Writing - umarbek.dev",
+			"description": "Blog posts and articles by Umarbek Bakhodirjonov on development, design, and things I find interesting."
+		},
+		"/projects": {
+			"title": "Projects - umarbek.dev",
+			"description": "Projects built by Umarbek Bakhodirjonov - from card games to file sharing tools and more."
+		},
+		"/reading": {
+			"title": "Reading Log - umarbek.dev",
+			"description": "Books Umarbek Bakhodirjonov is reading, has read, or wants to read."
+		}
+	}
+}

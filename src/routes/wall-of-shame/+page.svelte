@@ -1,11 +1,10 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	let { data } = $props();
 </script>
 
-<svelte:head>
-	<title>Wall of Shame - umarbek.dev</title>
-</svelte:head>
+<SEO title="Wall of Shame - umarbek.dev" noindex={true} />
 
 <div class="page">
 	<PageNav />

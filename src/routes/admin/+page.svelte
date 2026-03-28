@@ -1,18 +1,16 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import SEO from '$lib/components/SEO.svelte';
 
 	let { form }: { form: { error?: string } | null } = $props();
 	let loading = $state(false);
 </script>
 
-<svelte:head>
-	<title>Admin Login</title>
-</svelte:head>
+<SEO title="Admin Login" noindex={true} />
 
 <div class="login-page">
 	<div class="login-card">
 		<div class="login-header">
-			<img src="/crest.png" alt="Logo" class="login-logo" />
 			<h1 class="login-title">Admin Panel</h1>
 			<p class="login-subtitle">Sign in to continue</p>
 		</div>
@@ -87,13 +85,6 @@
 	.login-header {
 		text-align: center;
 		margin-bottom: 1.5rem;
-	}
-
-	.login-logo {
-		width: 48px;
-		height: 48px;
-		margin-bottom: 1rem;
-		opacity: 0.8;
 	}
 
 	.login-title {

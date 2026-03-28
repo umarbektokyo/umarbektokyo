@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	let { data } = $props();
 
 	const statusLabel: Record<string, string> = {
@@ -9,9 +10,11 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Reading Log - umarbek.dev</title>
-</svelte:head>
+<SEO
+	title="Reading Log - umarbek.dev"
+	description="Books Umarbek Bakhodirjonov is reading, has read, or wants to read."
+	url="/reading"
+/>
 
 <div class="page">
 	<PageNav />

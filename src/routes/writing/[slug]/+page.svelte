@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageNav from '$lib/components/PageNav.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	let { data } = $props();
 
 	function renderBody(raw: string): string {
@@ -19,8 +20,10 @@
 			// Images with alt text as captions
 			.replace(/!\[((?:[^\[\]]*|\[[^\]]*\])*)\]\(([^)]+)\)/g, (_m, alt, src) => {
 				const caption = alt.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-				return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" /><figcaption>${caption}</figcaption></figure>`;
+				return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" loading="lazy" /><figcaption>${caption}</figcaption></figure>`;
 			})
+			.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+			.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
 			.replace(/## (.+)/g, '<h2>$1</h2>')
 			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
 			.replace(/\*(.+?)\*/g, '<em>$1</em>')
@@ -42,10 +45,14 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{data.meta.title} - umarbek.dev</title>
-	<meta name="description" content={data.meta.description} />
-</svelte:head>
+<SEO
+	title="{data.meta.title} - umarbek.dev"
+	description={data.meta.description}
+	url="/writing/{data.meta.slug}"
+	type="article"
+	publishedDate={data.meta.date}
+	image={data.meta.image || ''}
+/>
 
 <article class="post">
 	<PageNav />

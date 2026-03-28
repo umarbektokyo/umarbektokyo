@@ -1,6 +1,6 @@
 Welcome to my corner of the internet :D
 
-![credit to [Caleb Worcester](https://cara.app/calebrateds)](banner.png)
+![credit to [Caleb Worcester](https://cara.app/calebrateds)](/banner.webp)
 
 I'm Umarbek, cool-things enthusiast, creating whatever my heart desires in the world of digital.
 
