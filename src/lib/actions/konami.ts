@@ -16,7 +16,7 @@ export function initKonami() {
 		if (e.key === KONAMI[idx]) {
 			idx++;
 			if (idx === KONAMI.length) {
-				triggerDownload('/quest.png');
+				triggerDownload('/assets/quest.png');
 				idx = 0;
 			}
 		} else {

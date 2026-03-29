@@ -26,10 +26,10 @@
 		noindex = false
 	}: Props = $props();
 
-	const fullUrl = url ? `${SITE_URL}${url}` : SITE_URL;
-	const fullImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
-	const ogType = type === 'article' ? 'article' : 'website';
-	const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+	const fullUrl = $derived(url ? `${SITE_URL}${url}` : SITE_URL);
+	const fullImage = $derived(image.startsWith('http') ? image : `${SITE_URL}${image}`);
+	const ogType = $derived(type === 'article' ? 'article' : 'website');
+	const robots = $derived(noindex ? 'noindex, nofollow' : 'index, follow');
 
 	const socials = config.author.socials;
 	const personJsonLd = JSON.stringify({

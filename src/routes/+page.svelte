@@ -51,7 +51,7 @@
 	<!-- Header with crest + nav -->
 	<div class="header panel">
 		<div class="header-left">
-			<img src="/crest.webp" alt="Umarbek" class="avatar" width="52" height="52" />
+			<img src="/assets/crest.webp" alt="Umarbek" class="avatar" width="52" height="52" />
 			<div>
 				<h1 class="name">{config.name}</h1>
 				<p class="tagline">{config.author.jobTitle} at {config.author.organization}</p>
