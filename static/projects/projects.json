@@ -32,8 +32,8 @@
 	{
 		"name": "certificate generator",
 		"description": "Online tool for automatically generating certificates/diplomas in batches: just upload the template, position text fields and turn ",
-		"github": "https://github.com/umarbektokyo/qr",
-		"url": "https://qr.umarbek.dev"
+		"github": "https://github.com/umarbektokyo/certificate-generator",
+		"url": "https://certificate-generator.umarbek.dev"
 	},
 	{
 		"name": "compare",
