@@ -17,27 +17,120 @@
 	];
 
 	function renderMd(md: string): string {
-		return md
-			.replace(/!\[((?:[^\[\]]*|\[[^\]]*\])*)\]\(([^)]+)\)/g, (_m, alt, src) => {
-				const caption = alt.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-				return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" loading="lazy" /><figcaption>${caption}</figcaption></figure>`;
-			})
-			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-			.replace(/\*(.+?)\*/g, '<em>$1</em>')
-			.replace(/`([^`]+)`/g, '<code>$1</code>')
-			.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-			.replace(/^### (.+)/gm, '<h3>$1</h3>')
-			.replace(/^## (.+)/gm, '<h2>$1</h2>')
-			.replace(/^# (.+)/gm, '<h1>$1</h1>')
-			.replace(/^- (.+)/gm, '<li>$1</li>')
-			.replace(/(<li>[\s\S]*?<\/li>)/g, '<ul>$1</ul>')
-			.split('\n\n')
-			.map((block) => {
-				block = block.trim();
-				if (!block || block.startsWith('<h') || block.startsWith('<ul')) return block;
-				return `<p>${block}</p>`;
-			})
-			.join('\n');
+		const inline = (s: string) =>
+				s
+						.replace(/!\[((?:[^\[\]]*|\[[^\]]*\])*)\]\(([^)]+)\)/g, (_m, alt, src) => {
+							const caption = alt.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+							return `<figure><img src="${src}" alt="${alt.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}" loading="lazy" /><figcaption>${caption}</figcaption></figure>`;
+						})
+						.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+						.replace(/\*(.+?)\*/g, '<em>$1</em>')
+						.replace(/`([^`]+)`/g, '<code>$1</code>')
+						.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+		const lines = md.split('\n');
+		const out: string[] = [];
+		let i = 0;
+		let paraLines: string[] = [];
+
+		const flushPara = () => {
+			if (!paraLines.length) return;
+			out.push(`<p>${paraLines.map(inline).join('<br />')}</p>`);
+			paraLines = [];
+		};
+
+		while (i < lines.length) {
+			const line = lines[i];
+
+			// Fenced code block
+			if (line.startsWith('```')) {
+				flushPara();
+				const lang = line.slice(3).trim();
+				const codeLines: string[] = [];
+				i++;
+				while (i < lines.length && !lines[i].startsWith('```')) {
+					codeLines.push(
+							lines[i]
+									.replace(/&/g, '&amp;')
+									.replace(/</g, '&lt;')
+									.replace(/>/g, '&gt;')
+									.replace(/"/g, '&quot;')
+					);
+					i++;
+				}
+				out.push(`<pre><code class="language-${lang}">${codeLines.join('\n')}</code></pre>`);
+				i++; // skip closing ```
+				continue;
+			}
+
+			// Horizontal rule
+			if (/^[ \t]*([-*_])([ \t]*\1){2,}[ \t]*$/.test(line)) {
+				flushPara();
+				out.push('<hr />');
+				i++;
+				continue;
+			}
+
+			// Headings
+			const headingMatch = line.match(/^(#{1,3}) (.+)/);
+			if (headingMatch) {
+				flushPara();
+				const tag = `h${headingMatch[1].length}`;
+				out.push(`<${tag}>${inline(headingMatch[2])}</${tag}>`);
+				i++;
+				continue;
+			}
+
+			// Blockquote
+			if (line.startsWith('>')) {
+				flushPara();
+				const bqLines: string[] = [];
+				while (i < lines.length && lines[i].startsWith('>')) {
+					bqLines.push(lines[i].slice(1).trimStart());
+					i++;
+				}
+				out.push(`<blockquote>${bqLines.map(inline).join('<br />')}</blockquote>`);
+				continue;
+			}
+
+			// Unordered list
+			if (/^[ \t]*- /.test(line)) {
+				flushPara();
+				const items: string[] = [];
+				while (i < lines.length && /^[ \t]*- /.test(lines[i])) {
+					items.push(`<li>${inline(lines[i].replace(/^[ \t]*- /, ''))}</li>`);
+					i++;
+				}
+				out.push(`<ul>${items.join('')}</ul>`);
+				continue;
+			}
+
+			// Ordered list
+			if (/^[ \t]*\d+\. /.test(line)) {
+				flushPara();
+				const items: string[] = [];
+				while (i < lines.length && /^[ \t]*\d+\. /.test(lines[i])) {
+					items.push(`<li>${inline(lines[i].replace(/^[ \t]*\d+\. /, ''))}</li>`);
+					i++;
+				}
+				out.push(`<ol>${items.join('')}</ol>`);
+				continue;
+			}
+
+			// Blank line — flush paragraph, don't emit anything
+			if (line.trim() === '') {
+				flushPara();
+				i++;
+				continue;
+			}
+
+			// Regular text — accumulate into paragraph
+			paraLines.push(line);
+			i++;
+		}
+
+		flushPara();
+		return out.join('\n');
 	}
 </script>
 
@@ -222,5 +315,44 @@
 		.nav-links {
 			flex-wrap: wrap;
 		}
+	}
+
+	.about-body :global(pre) {
+		background: var(--bg-base);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 1rem 1.25rem;
+		margin: 1rem 0;
+		overflow-x: auto;
+		scrollbar-width: none; /* Firefox */
+	}
+
+	.about-body :global(pre::-webkit-scrollbar) {
+		display: none; /* Chrome, Safari, Edge */
+	}
+
+	.about-body :global(pre code) {
+		font-family: var(--font-mono);
+		font-size: 0.82em;
+		background: none;
+		border: none;
+		padding: 0;
+		color: var(--accent-light);
+		white-space: pre;
+		display: block;
+	}
+
+	.about-body :global(hr) {
+		border: none;
+		border-top: 1px solid var(--border);
+		margin: 1.5rem 0;
+	}
+
+	.about-body :global(blockquote) {
+		border-left: 3px solid var(--border-light);
+		margin: 1rem 0;
+		padding: 0.25rem 0 0.25rem 1rem;
+		color: var(--text-muted);
+		font-style: italic;
 	}
 </style>

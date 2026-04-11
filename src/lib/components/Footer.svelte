@@ -44,7 +44,7 @@
 		align-items: center;
 		justify-content: center;
 		padding: 0.65rem 1rem;
-		background: var(--bg-header);
+		background: var(--bg-base);
 		border-top: 1px solid var(--border);
 		font-size: 0.85rem;
 		color: var(--text-dim);
@@ -57,6 +57,12 @@
 		display: flex;
 		gap: 0.3rem;
 		align-items: center;
+	}
+
+	@media (max-width: 640px) {
+		.konami {
+			display: none;
+		}
 	}
 
 	.arrow {
