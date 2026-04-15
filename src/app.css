@@ -21,7 +21,30 @@
 	--font-mono: 'Space Mono', monospace;
 	--font-sans: 'IBM Plex Sans', sans-serif;
 	--font-serif: 'IBM Plex Serif', serif;
+	--dot-color: #363636;
 }
+
+:root.theme-tudelft {
+	--bg-base: #01a6d6;
+	--bg-panel: #f7f7f7;
+	--bg-header: #f7f7f7;
+	--bg-input: #ffffff;
+	--bg-hover: #daeff6;
+	--accent: #01a6d6;
+	--accent-light: #6ebbd5;
+	--accent-orange: #01a6d6;
+	--text: #222222;
+	--text-dim: #222222;
+	--text-muted: #222222;
+	--border: #daeff6;
+	--border-light: #6ebbd5;
+	--dot-color: #6ebbd5;
+	--code-text: #ffffff;
+	--terminal-accent: #6ebbd5;
+	--konami-lit: #ffffff;
+	--crest-opacity: 1;
+}
+
 
 * {
 	margin: 0;
@@ -41,7 +64,7 @@ body {
 
 /* Dot grid background */
 body {
-	background-image: radial-gradient(circle, #363636 1px, transparent 1px);
+	background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
 	background-size: 32px 32px;
 }
 

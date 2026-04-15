@@ -73,7 +73,7 @@
 
 	.arrow.lit {
 		opacity: 1;
-		color: var(--accent-light);
+		color: var(--konami-lit, var(--accent-light));
 	}
 
 	.title {

@@ -32,13 +32,13 @@
 		width: 28px;
 		height: 28px;
 		border-radius: 50%;
-		opacity: 0.7;
+		opacity: var(--crest-opacity, 0.7);
 	}
 
 	.nav-link {
 		padding: 0.3rem 0.7rem;
 		font-size: 0.95rem;
-		color: var(--text-muted);
+		color: var(--text-dim);
 		border-radius: var(--radius);
 		transition: all 0.1s;
 	}

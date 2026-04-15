@@ -238,7 +238,7 @@
 	}
 
 	.line.is-input {
-		color: var(--accent);
+		color: var(--terminal-accent, var(--accent));
 	}
 
 	.line.is-fetch {
@@ -252,7 +252,7 @@
 	}
 
 	.prompt {
-		color: var(--accent);
+		color: var(--terminal-accent, var(--accent));
 		flex-shrink: 0;
 	}
 

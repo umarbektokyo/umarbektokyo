@@ -16,6 +16,10 @@
 		{ label: 'LinkedIn', url: config.author.socials.linkedin }
 	];
 
+	function toggleTUDelft() {
+		document.documentElement.classList.toggle('theme-tudelft');
+	}
+
 	function renderMd(md: string): string {
 		const inline = (s: string) =>
 				s
@@ -147,7 +151,10 @@
 			<img src="/assets/crest.webp" alt="Umarbek" class="avatar" width="52" height="52" />
 			<div>
 				<h1 class="name">{config.name}</h1>
-				<p class="tagline">{config.author.jobTitle} at {config.author.organization}</p>
+				<p class="tagline">
+					{config.author.jobTitle} at
+					<button class="tudelft-trigger" onclick={toggleTUDelft}>{config.author.organization}</button>
+				</p>
 			</div>
 		</div>
 		<nav class="nav-links">
@@ -208,11 +215,29 @@
 		font-size: 1.3rem;
 		font-weight: 600;
 		margin-bottom: 0.15rem;
+		color: var(--text);
 	}
 
 	.tagline {
 		color: var(--text-dim);
 		font-size: 0.9rem;
+	}
+
+	.tudelft-trigger {
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+		text-decoration: underline dotted transparent;
+		transition: all 0.15s;
+	}
+
+	.tudelft-trigger:hover {
+		color: var(--accent);
+		text-decoration-color: var(--accent);
 	}
 
 	.nav-links {
@@ -337,7 +362,7 @@
 		background: none;
 		border: none;
 		padding: 0;
-		color: var(--accent-light);
+		color: var(--code-text, var(--accent-light));
 		white-space: pre;
 		display: block;
 	}

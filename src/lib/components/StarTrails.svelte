@@ -30,14 +30,18 @@
 			};
 		});
 
-		ctx.fillStyle = '#1d1d1d';
-		ctx.fillRect(0, 0, W, H);
+		ctx.clearRect(0, 0, W, H);
 
 		let animId: number;
 
 		function draw() {
-			ctx.fillStyle = 'rgba(29, 29, 29, 0.015)';
+			ctx.globalCompositeOperation = 'destination-out';
+			ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
 			ctx.fillRect(0, 0, W, H);
+			ctx.globalCompositeOperation = 'source-over';
+
+			const starColor = document.documentElement.classList.contains('theme-tudelft') ? '0, 166, 214' : '160, 160, 160';
+			const starDotColor = document.documentElement.classList.contains('theme-tudelft') ? '1, 166, 214' : '180, 180, 180';
 
 			stars.forEach((star) => {
 				const prevAngle = star.angle;
@@ -51,13 +55,13 @@
 				ctx.beginPath();
 				ctx.moveTo(px, py);
 				ctx.lineTo(x, y);
-				ctx.strokeStyle = `rgba(160, 160, 160, ${star.opacity})`;
+				ctx.strokeStyle = `rgba(${starColor}, ${star.opacity})`;
 				ctx.lineWidth = star.size;
 				ctx.stroke();
 
 				ctx.beginPath();
 				ctx.arc(x, y, star.size * 0.6, 0, Math.PI * 2);
-				ctx.fillStyle = `rgba(180, 180, 180, ${star.opacity * 1.2})`;
+				ctx.fillStyle = `rgba(${starDotColor}, ${star.opacity * 1.2})`;
 				ctx.fill();
 			});
 
@@ -69,8 +73,7 @@
 		function handleResize() {
 			W = canvas.width = window.innerWidth;
 			H = canvas.height = window.innerHeight;
-			ctx.fillStyle = '#1d1d1d';
-			ctx.fillRect(0, 0, W, H);
+			ctx.clearRect(0, 0, W, H);
 		}
 
 		window.addEventListener('resize', handleResize);
