@@ -1,4 +1,4 @@
-Leonard Euler once said "58% of statistics on the internet are lies". Here, you can trust me, as we're in the rest of the 42%. Welcome to my corner of the internet :D
+Leonhard Euler once said "58% of statistics on the internet are lies". Here, you can trust me, as we're in the rest of the 42%. Welcome to my corner of the internet :D
 
 ![yep, that is me in the beam of [KEK Particle Accelerator](https://www.kek.jp/en/)](/assets/banner.webp)
 
