@@ -3,15 +3,15 @@
 	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<SEO title="ayo" description="" />
+<SEO title="lukas" description="" />
 
 <div class="page">
 	<PageNav />
-	<p1>All I know is that <a href="https://nehaa.xyz/" target="_blank">she</a> is evil.</p1>
+	<p1><a href="https://lukasreis.com/" target="_blank">He</a> uses arch btw</p1>
 	<div class="photo">
-    <img src="https://cultofthepartyparrot.com/parrots/hd/everythingsfineparrot.gif" alt="Ultrafast Parrot" />
-    <img src="https://cultofthepartyparrot.com/parrots/hd/evilparrot.gif" alt="Ultrafast Parrot" />
-    <img src="https://cultofthepartyparrot.com/parrots/hd/everythingsfineparrot.gif" alt="Ultrafast Parrot" />
+    <img src="https://cultofthepartyparrot.com/parrots/hd/partyparrot.gif" alt="Ultrafast Parrot" />
+    <img src="https://cultofthepartyparrot.com/parrots/hd/opensourceparrot.gif" alt="Ultrafast Parrot" />
+    <img src="https://cultofthepartyparrot.com/parrots/hd/sleepingparrot.gif" alt="Ultrafast Parrot" />
   </div>
 </div>
 
