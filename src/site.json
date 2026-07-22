@@ -12,11 +12,12 @@
 
 	"author": {
 		"jobTitle": "Student",
-		"organization": "TU Delft (starting September)",
-		"location": "Tokyo, Japan",
+		"organization": "TU Delft",
+		"location": "Delft, Netherlands",
 		"email": "hello@umarbek.dev",
 		"socials": {
 			"github": "https://github.com/umarbektokyo",
+			"signal": "https://signal.me/#eu/ffU_8BfwtlBV5-TLyzh-w6l6a1WFjs9ldq-K2aTror_jxM-I7Y9MPqHMtssY-bv6",
 			"twitter": "https://twitter.com/umarbektokyo",
 			"linkedin": "https://linkedin.com/in/umarbektokyo"
 		}
@@ -37,7 +38,13 @@
 		},
 		"/wall-of-shame": {
 			"title": "wall of shame",
-			"description": ""
-		}
+			"description": "Shame on ones who tried to hack all-mighty Umarbek"
+		},
+    	"/noga": {
+      	"title": "did someone say coffee?"
+    	},
+		"/esia": {
+      	"title": "esia was here"
+    	}
 	}
 }

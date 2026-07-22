@@ -12,16 +12,26 @@
 		"url": "https://matetra.umarbek.dev"
 	},
 	{
+		"name": "qr-coder",
+		"description": "QR-Code generator that you deserve!",
+		"github": "https://github.com/umarbektokyo/qr",
+		"url": "https://qr.umarbek.dev"
+	},
+	{
+		"name": "MIST",
+		"description": "MIST is a robot in the form of a rice-cooker with legs, originating from the Pantheon Show. Our goal in this project was to test our skills whilst making something beautiful.",
+		"github": "https://github.com/flushloll/MIST"
+	},
+	{
+		"name": "PCB badge",
+		"description": "Humbly proclaimed best fallout batch in a form of a retro floppy disk.",
+		"github": "https://github.com/umarbektokyo/badge"
+	},
+	{
 		"name": "share it",
 		"description": "P2P file sharing service with no limits and max transfer speed; no auth required, just share a 6-letter pin to your friend and start sending files!",
 		"github": "https://github.com/umarbektokyo/shareit",
 		"url": "https://shareit.umarbek.dev"
-	},
-	{
-		"name": "qr-code generator",
-		"description": "QR-Code generator that you deserve!",
-		"github": "https://github.com/umarbektokyo/qr",
-		"url": "https://qr.umarbek.dev"
 	},
 	{
 		"name": "vault",

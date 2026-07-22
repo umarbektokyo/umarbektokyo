@@ -32,14 +32,14 @@
 		'visitor@umarbek.dev',
 		'-------------------',
 		'OS: UmarbekOS 1.0.0 aarch64',
-		'Host: Umbrella-Tokyo',
+		'Host: Umbrella-Delft',
 		'Kernel: DietPi GNU/Linux',
 		'Uptime: since 2026',
 		'Shell: /bin/zsh',
 		'Terminal: umarbek.dev/terminal',
-		'CPU: Intel 4004 @ 740kHz',
-		'GPU: In this economy?',
-		'Memory: Infinite',
+		'CPU: AMD EPYC 9965',
+		'GPU: ...what is a GPU again?',
+		'Memory: In this economy?',
 		'',
 		'Type "help" for commands.'
 	];
@@ -88,7 +88,7 @@
 		},
 		whoami: () => [
 			'Umarbek Bakhodirjonov',
-			'Studying at Shinagawa International School',
+			'Student at TU Delft',
 			'Fav tools: Blender, Golang, Tailscale, Ollama, Signal'
 		],
 		ls: () => {
@@ -103,7 +103,6 @@
 				return [
 					"I'm Umarbek.",
 					'I write code, read books, and tinker with servers.',
-					'This site runs on a Raspberry Pi 5 in Tokyo.',
 					'',
 					'hello@umarbek.dev'
 				];

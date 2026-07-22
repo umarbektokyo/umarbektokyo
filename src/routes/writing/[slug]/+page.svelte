@@ -88,7 +88,7 @@
 		font-size: 1.6rem;
 		font-weight: 600;
 		line-height: 1.3;
-		margin-bottom: 1.25rem;
+		margin: 3rem 0;
 		letter-spacing: -0.02em;
 	}
 

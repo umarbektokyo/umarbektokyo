@@ -11,6 +11,7 @@
 
 	const socials = [
 		{ label: 'GitHub', url: config.author.socials.github },
+		{ label: 'Signal', url: config.author.socials.signal },
 		{ label: 'Email', url: `mailto:${config.author.email}` },
 		{ label: 'Twitter', url: config.author.socials.twitter },
 		{ label: 'LinkedIn', url: config.author.socials.linkedin }
@@ -30,7 +31,7 @@
 						.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
 						.replace(/\*(.+?)\*/g, '<em>$1</em>')
 						.replace(/`([^`]+)`/g, '<code>$1</code>')
-						.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+						.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 
 		const lines = md.split('\n');
 		const out: string[] = [];
