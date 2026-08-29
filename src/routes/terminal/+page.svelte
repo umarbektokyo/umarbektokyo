@@ -149,7 +149,7 @@
 					'Your punishment: Install CUDA on arch linux with no LLM or YouTube, pure documentation and agony ❤️‍🔥'
 				];
 			}
-			return ['You really though you could do that 🙏'];
+			return ['You really thought you could do that 🙏'];
 		}
 	};
 
